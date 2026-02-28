@@ -35,7 +35,7 @@ export default function ClawPage() {
       desc: "成功案例分享、作品展示",
       href: "/claw/cases",
       color: "text-purple-600",
-      badge: nil
+      badge: null
     },
     {
       title: "需求发布",
