@@ -1,0 +1,58 @@
+[
+  {
+    "name": "OpenClaw",
+    "category": "AI框架",
+    "description": "开源AI助手框架，支持多渠道集成",
+    "installs": "1.2K",
+    "rating": 4.8
+  },
+  {
+    "name": "skill-excel",
+    "category": "办公",
+    "description": "Excel操作技能，数据分析可视化",
+    "installs": "890",
+    "rating": 4.9
+  },
+  {
+    "name": "skill-financial-analysis",
+    "category": "金融",
+    "description": "财务分析技能，财报解读与预测",
+    "installs": "567",
+    "rating": 4.7
+  },
+  {
+    "name": "skill-data-chart",
+    "category": "可视化",
+    "description": "数据图表生成技能",
+    "installs": "453",
+    "rating": 4.6
+  },
+  {
+    "name": "skill-report-gen",
+    "category": "办公",
+    "description": "报告自动生成技能",
+    "installs": "389",
+    "rating": 4.8
+  },
+  {
+    "name": "legal-cog",
+    "category": "法律",
+    "description": "法律文档分析技能",
+    "installs": "234",
+    "rating": 4.5
+  },
+  {
+    "name": "skill-pitch-deck",
+    "category": "商业",
+    "description": "商业计划书生成",
+    "installs": "312",
+    "rating": 4.7
+  },
+  {
+    "name": "skill-risk-assessment",
+    "category": "金融",
+    "description": "投资风险评估",
+    "installs": "198",
+    "rating": 4.6
+  }
+]

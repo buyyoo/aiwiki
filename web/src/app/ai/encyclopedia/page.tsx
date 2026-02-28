@@ -1,54 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, BookOpen, Wrench, Newspaper, MessageSquare, Lightbulb } from "lucide-react"
-
-const articles = [
-  {
-    title: "什么是大语言模型（LLM）？",
-    desc: "全面解析LLM的工作原理、发展历史和应用场景",
-    category: "AI百科",
-    views: 1250,
-    date: "2026-02-20"
-  },
-  {
-    title: "ChatGPT使用技巧大全",
-    desc: "30个实用技巧，让你的ChatGPT工作效率翻倍",
-    category: "教程",
-    views: 2340,
-    date: "2026-02-18"
-  },
-  {
-    title: "Midjourney入门指南",
-    desc: "从注册到出图，一站式AI绘画教学",
-    category: "教程",
-    views: 1890,
-    date: "2026-02-15"
-  },
-  {
-    title: "2026年AI工具推荐",
-    desc: "精选50+款免费好用的AI工具",
-    category: "工具库",
-    views: 3210,
-    date: "2026-02-10"
-  },
-  {
-    title: "Prompt工程实战",
-    desc: "如何写出高质量的提示词",
-    category: "Prompt库",
-    views: 1560,
-    date: "2026-02-08"
-  },
-  {
-    title: "AIAgent发展趋势",
-    desc: "AI智能体的现状与未来展望",
-    category: "行业动态",
-    views: 980,
-    date: "2026-02-05"
-  }
-]
+import { getArticles } from "@/lib/data"
 
 export default function AIEncyclopediaPage() {
+  const articles = getArticles()
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
@@ -100,23 +57,32 @@ export default function AIEncyclopediaPage() {
       {/* Articles */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow cursor-pointer">
-                <CardHeader>
-                  <div className="text-xs text-blue-600 mb-2">{article.category}</div>
-                  <CardTitle className="text-lg">{article.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-slate-600 mb-4">{article.desc}</p>
-                  <div className="flex items-center justify-between text-xs text-slate-500">
-                    <span>👁 {article.views}</span>
-                    <span>📅 {article.date}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {articles.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articles.map((article, i) => (
+                <Card key={i} className="hover:shadow-lg transition-shadow cursor-pointer">
+                  <CardHeader>
+                    <div className="text-xs text-blue-600 mb-2">{article.category}</div>
+                    <CardTitle className="text-lg">{article.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-slate-600 mb-4">{article.desc}</p>
+                    <div className="flex items-center justify-between text-xs text-slate-500">
+                      <span>👁 {article.views}</span>
+                      <span>📅 {article.date}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-slate-500">
+              <p>暂无文章数据</p>
+              <Link href="/ai/tools">
+                <Button className="mt-4">查看AI工具</Button>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

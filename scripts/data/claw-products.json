@@ -1,0 +1,66 @@
+[
+  {
+    "name": "财务分析智能体",
+    "description": "自动分析财务报表，生成投资建议",
+    "price": 99,
+    "sales": 156,
+    "rating": 4.9,
+    "category": "金融"
+  },
+  {
+    "name": "合同审查助手",
+    "description": "AI自动识别合同风险点",
+    "price": 199,
+    "sales": 89,
+    "rating": 4.8,
+    "category": "法律"
+  },
+  {
+    "name": "周报生成器",
+    "description": "一键生成工作周报月报",
+    "price": 0,
+    "sales": 2340,
+    "rating": 4.7,
+    "category": "办公"
+  },
+  {
+    "name": "小红书文案专家",
+    "description": "爆款文案生成涨粉神器",
+    "price": 49,
+    "sales": 567,
+    "rating": 4.9,
+    "category": "营销"
+  },
+  {
+    "name": "Code Reviewer",
+    "description": "自动化代码审查与优化建议",
+    "price": 79,
+    "sales": 234,
+    "rating": 4.6,
+    "category": "开发"
+  },
+  {
+    "name": "PPT生成助手",
+    "description": "根据主题自动生成PPT",
+    "price": 129,
+    "sales": 345,
+    "rating": 4.8,
+    "category": "办公"
+  },
+  {
+    "name": "数据分析助手",
+    "description": "Excel数据分析自动化",
+    "price": 59,
+    "sales": 456,
+    "rating": 4.7,
+    "category": "数据"
+  },
+  {
+    "name": "客服机器人",
+    "description": "智能回复7x24小时在线",
+    "price": 199,
+    "sales": 123,
+    "rating": 4.5,
+    "category": "客服"
+  }
+]

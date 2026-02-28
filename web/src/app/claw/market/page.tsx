@@ -1,75 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-
-const products = [
-  {
-    name: "财务分析智能体",
-    description: "自动分析财务报表，生成投资建议",
-    price: 99,
-    sales: 156,
-    rating: 4.9,
-    category: "金融"
-  },
-  {
-    name: "合同审查助手",
-    description: "AI自动识别合同风险点",
-    price: 199,
-    sales: 89,
-    rating: 4.8,
-    category: "法律"
-  },
-  {
-    name: "周报生成器",
-    description: "一键生成工作周报，月报",
-    price: 0,
-    sales: 2340,
-    rating: 4.7,
-    category: "办公"
-  },
-  {
-    name: "小红书文案专家",
-    description: "爆款文案生成，涨粉神器",
-    price: 49,
-    sales: 567,
-    rating: 4.9,
-    category: "营销"
-  },
-  {
-    name: "Code Reviewer",
-    description: "自动化代码审查与优化建议",
-    price: 79,
-    sales: 234,
-    rating: 4.6,
-    category: "开发"
-  },
-  {
-    name: "PPT生成助手",
-    description: "根据主题自动生成PPT",
-    price: 129,
-    sales: 345,
-    rating: 4.8,
-    category: "办公"
-  },
-  {
-    name: "数据分析助手",
-    description: "Excel数据分析自动化",
-    price: 59,
-    sales: 456,
-    rating: 4.7,
-    category: "数据"
-  },
-  {
-    name: "客服机器人",
-    description: "智能回复，7x24小时在线",
-    price: 199,
-    sales: 123,
-    rating: 4.5,
-    category: "客服"
-  }
-]
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getProducts } from "@/lib/data"
 
 export default function ClawMarketPage() {
+  const products = getProducts()
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
@@ -159,29 +95,35 @@ export default function ClawMarketPage() {
           </div>
 
           {/* Products Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow">
-                <CardContent className="pt-4">
-                  <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-3 flex items-center justify-center">
-                    <span className="text-4xl">🤖</span>
-                  </div>
-                  <div className="text-xs text-slate-500 mb-1">{product.category}</div>
-                  <h3 className="font-medium mb-2 line-clamp-1">{product.name}</h3>
-                  <p className="text-xs text-slate-500 mb-2 line-clamp-2">{product.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-orange-600 font-bold">
-                      {product.price === 0 ? '免费' : `¥${product.price}`}
-                    </span>
-                    <div className="flex items-center gap-1 text-sm text-slate-500">
-                      <span>★</span>{product.rating}
+          {products.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {products.map((product, i) => (
+                <Card key={i} className="hover:shadow-lg transition-shadow">
+                  <CardContent className="pt-4">
+                    <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-3 flex items-center justify-center">
+                      <span className="text-4xl">🤖</span>
                     </div>
-                  </div>
-                  <div className="text-xs text-slate-500 mt-2">销量: {product.sales}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <div className="text-xs text-slate-500 mb-1">{product.category}</div>
+                    <h3 className="font-medium mb-2 line-clamp-1">{product.name}</h3>
+                    <p className="text-xs text-slate-500 mb-2 line-clamp-2">{product.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-orange-600 font-bold">
+                        {product.price === 0 ? '免费' : `¥${product.price}`}
+                      </span>
+                      <div className="flex items-center gap-1 text-sm text-slate-500">
+                        <span>★</span>{product.rating}
+                      </div>
+                    </div>
+                    <div className="text-xs text-slate-500 mt-2">销量: {product.sales}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-slate-500">
+              <p>暂无商品数据</p>
+            </div>
+          )}
         </div>
       </section>
 

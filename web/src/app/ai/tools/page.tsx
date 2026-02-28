@@ -1,75 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-
-const tools = [
-  {
-    name: "ChatGPT",
-    category: "对话AI",
-    description: "OpenAI开发的大型语言模型，支持多轮对话",
-    price: "免费/付费",
-    rating: 4.9,
-    tags: ["对话", "写作", "编程"]
-  },
-  {
-    name: "Claude",
-    category: "对话AI",
-    description: "Anthropic开发的AI助手，擅长分析和长文本",
-    price: "免费",
-    rating: 4.8,
-    tags: ["分析", "长文", "安全"]
-  },
-  {
-    name: "Midjourney",
-    category: "AI绘画",
-    description: "最强AI图像生成工具",
-    price: "付费",
-    rating: 4.9,
-    tags: ["绘画", "设计", "创意"]
-  },
-  {
-    name: "Stable Diffusion",
-    category: "AI绘画",
-    description: "开源免费图像生成模型",
-    price: "免费",
-    rating: 4.7,
-    tags: ["绘画", "开源", "本地部署"]
-  },
-  {
-    name: "Cursor",
-    category: "编程",
-    description: "AI编程助手，集成GPT-4",
-    price: "免费",
-    rating: 4.8,
-    tags: ["编程", "IDE", "代码"]
-  },
-  {
-    name: "Notion AI",
-    category: "办公",
-    description: "AI写作和笔记助手",
-    price: "付费",
-    rating: 4.6,
-    tags: ["写作", "笔记", "办公"]
-  },
-  {
-    name: "Copy.ai",
-    category: "营销",
-    description: "AI营销文案生成",
-    price: "免费/付费",
-    rating: 4.5,
-    tags: ["营销", "文案", "社交媒体"]
-  },
-  {
-    name: "Synthesia",
-    category: "视频",
-    description: "AI视频生成平台",
-    price: "付费",
-    rating: 4.7,
-    tags: ["视频", "数字人", "教育"]
-  }
-]
+import { getTools } from "@/lib/data"
 
 export default function AIToolsPage() {
+  const tools = getTools()
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header */}
@@ -119,28 +55,34 @@ export default function AIToolsPage() {
       {/* Tools Grid */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tools.map((tool, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{tool.name}</CardTitle>
-                    <span className="text-yellow-500">★ {tool.rating}</span>
-                  </div>
-                  <CardDescription>{tool.category}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-slate-600 mb-3">{tool.description}</p>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {tool.tags.map((tag, j) => (
-                      <span key={j} className="text-xs bg-slate-100 px-2 py-0.5 rounded">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="text-sm font-medium text-green-600">{tool.price}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {tools.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {tools.map((tool, i) => (
+                <Card key={i} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-lg">{tool.name}</CardTitle>
+                      <span className="text-yellow-500">★ {tool.rating}</span>
+                    </div>
+                    <CardDescription>{tool.category}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-slate-600 mb-3">{tool.description}</p>
+                    <div className="flex flex-wrap gap-1 mb-3">
+                      {tool.tags.map((tag, j) => (
+                        <span key={j} className="text-xs bg-slate-100 px-2 py-0.5 rounded">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="text-sm font-medium text-green-600">{tool.price}</div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-slate-500">
+              <p>暂无工具数据</p>
+            </div>
+          )}
         </div>
       </section>
 
