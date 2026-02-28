@@ -1,11 +1,20 @@
-import { createClient } from '@supabase/supabase-js'
+// Supabase client placeholder
+// Install: npm install @supabase/supabase-js
 
+/*
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const createClient = () => {
+  // @ts-ignore
+  return import('@supabase/supabase-js').then(({ createClient }) => 
+    createClient(supabaseUrl, supabaseAnonKey)
+  )
+}
+*/
 
-// 服务端客户端（具有更高权限）
-export const createServerClient = () => {
-  return createClient(supabaseUrl, supabaseAnonKey)
+// Placeholder - to be implemented after Supabase setup
+export const supabase = {
+  from: () => ({ select: () => ({ order: () => ({ data: [] }) }) }),
+  auth: { getUser: () => Promise.resolve({ data: { user: null } }) }
 }
