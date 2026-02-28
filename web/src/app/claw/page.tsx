@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Claw, ShoppingBag, Briefcase, Store, Star, Plus, Search, TrendingUp, Award } from "lucide-react"
+import { Hexagon, ShoppingBag, Briefcase, Store, Star, Plus, Search, TrendingUp, Award } from "lucide-react"
 
 export default function ClawPage() {
   const sections = [
@@ -164,7 +164,7 @@ export default function ClawPage() {
               <Card key={i} className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardContent className="pt-4">
                   <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-3 flex items-center justify-center">
-                    <Claw className="w-12 h-12 text-slate-400" />
+                    <Hexagon className="w-12 h-12 text-slate-400" />
                   </div>
                   <h3 className="font-medium mb-2">{product.name}</h3>
                   <div className="flex items-center justify-between">

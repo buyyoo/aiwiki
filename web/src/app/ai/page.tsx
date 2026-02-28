@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, BookOpen, Lightbulb, News, Tools, MessageSquare } from "lucide-react"
+import { Brain, BookOpen, Lightbulb, Newspaper, Wrench, MessageSquare } from "lucide-react"
 
 export default function AIPage() {
   const sections = [
@@ -21,14 +21,14 @@ export default function AIPage() {
     },
     {
       title: "工具库",
-      icon: Tools,
+      icon: Wrench,
       desc: "精选AI工具评测、推荐与使用指南",
       href: "/ai/tools",
       color: "text-purple-600"
     },
     {
       title: "最新资讯",
-      icon: News,
+      icon: Newspaper,
       desc: "AI行业动态、技术发展、应用案例",
       href: "/ai/news",
       color: "text-red-600"

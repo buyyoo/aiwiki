@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, BookOpen, Claw } from "lucide-react"
+import { Brain, BookOpen, Hexagon } from "lucide-react"
 
 export default function Home() {
   return (
@@ -86,7 +86,7 @@ export default function Home() {
             {/* Claw Column */}
             <Card>
               <CardHeader>
-                <Claw className="w-12 h-12 text-orange-600 mb-2" />
+                <Hexagon className="w-12 h-12 text-orange-600 mb-2" />
                 <CardTitle>Claw 板块</CardTitle>
                 <CardDescription>智能体交易市场</CardDescription>
               </CardHeader>
