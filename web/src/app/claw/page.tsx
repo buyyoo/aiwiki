@@ -27,7 +27,7 @@ export default function ClawPage() {
       desc: "付费技能、插件、模板",
       href: "/claw/shop",
       color: "text-green-600",
-      badge: nil
+      badge: null
     },
     {
       title: "案例展示",
@@ -51,7 +51,7 @@ export default function ClawPage() {
       desc: "畅销智能体、优质项目",
       href: "/claw/ranking",
       color: "text-yellow-600",
-      badge: nil
+      badge: null
     }
   ]
 
