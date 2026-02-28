@@ -1,7 +1,5 @@
 "use client"
 
-"use client"
-
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -48,8 +46,11 @@ export default function Home() {
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/ai" className="text-slate-600 hover:text-slate-900">AI板块</Link>
+            <Link href="/models" className="text-slate-600 hover:text-slate-900">模型广场</Link>
             <Link href="/wiki" className="text-slate-600 hover:text-slate-900">Wiki板块</Link>
             <Link href="/claw" className="text-slate-600 hover:text-slate-900">Claw板块</Link>
+            <Link href="/claw/agents" className="text-slate-600 hover:text-slate-900">智能体</Link>
+            <Link href="/download" className="text-orange-600 font-medium">下载</Link>
           </nav>
           <div className="flex items-center gap-2">
             <Link href="/login">
